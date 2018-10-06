@@ -1,17 +1,17 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require("path");
+const HtmlWebpackPlugin = require(`html-webpack-plugin`);
+const path = require(`path`);
 
 module.exports = {
-  entry: "./src/js/index.jsx",
+  entry: `./src/js/index.jsx`,
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    filename: "js/app.js"
+    path: path.resolve(__dirname, `dist/`),
+    filename: `js/app.js`
   },
   plugins: [new HtmlWebpackPlugin({
     hash: true,
-    title: 'Weather App',
-    template: './src/index.html',
-    filename: './index.html'
+    title: `React Sandbox`,
+    template: `./src/index.html`,
+    filename: `./index.html`
   })],
   module: {
     rules: [
@@ -19,25 +19,26 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         resolve: {
-          extensions: [".js", ".jsx"]
+          extensions: [`.js`, `.jsx`]
         },
         use: {
-          loader: "babel-loader",
+          loader: `babel-loader`,
           options: {
-            presets: ["react", "babel-preset-env"]
+            presets: [`react`, `babel-preset-env`]
           }
         }
       },
       {
-        test:/\.scss$/,resolve: {
-          extensions: [".scss"]
+        test: /\.scss$/,
+        resolve: {
+          extensions: [`.scss`]
         },
-        use:['style-loader', 'css-loader', 'sass-loader']
+        use: [`style-loader`, `css-loader`, `sass-loader`]
       }
     ]
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: `./dist`
   },
-  devtool: 'source-map'
+  devtool: `source-map`
 };
