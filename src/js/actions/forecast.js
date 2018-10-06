@@ -2,6 +2,7 @@ import {
   compose,
   split,
   head,
+  reduce,
   has,
   prop,
   path,
@@ -77,7 +78,7 @@ export const forecastFetchData = url => dispatch => {
         };
 
         const parsedList = {
-          fixedList: data.list.reduce((acc, item) => {
+          fixedList: reduce((acc, item) => {
             const day = createDayVal(item);
             const description = getDescription(item);
             if (!has(`day`, acc)) {
@@ -89,11 +90,14 @@ export const forecastFetchData = url => dispatch => {
               acc[day].description = acc[day].description.concat(description);
             }
             return acc;
-          }, {})
+          }, {}, data.list)
         };
         dispatch(
           forecastFetchDataSuccess(
-            merge(data, parsedList)
+            merge(
+              data,
+              parsedList
+            )
           )
         );
       }
