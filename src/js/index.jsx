@@ -5,6 +5,7 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 import configureStore from './store/configureStore';
 import App from './components/App';
+import '../styles/index.scss';
 
 const store = configureStore();
 
