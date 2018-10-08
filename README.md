@@ -10,3 +10,15 @@ Has
 - Prop Types
 - Sass
 - eslint
+
+## Install
+
+```bash
+npm install
+```
+
+## Run
+
+```bash
+npm run start
+```
