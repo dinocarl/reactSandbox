@@ -1,5 +1,4 @@
 import React from 'react';
-import { prop } from 'ramda';
 import {
   VictoryChart,
   VictoryAxis,
@@ -7,7 +6,7 @@ import {
   VictoryLine
 } from 'victory';
 
-const VicChart = props => (
+const VicChart = ({ data }) => (
   <VictoryChart
     domainPadding={10}
     theme={VictoryTheme.material}
@@ -20,7 +19,7 @@ const VicChart = props => (
       tickFormat={(x) => (`$${x / 1000}k`)}
     />
     <VictoryLine
-      data={prop(`data`, props)}
+      data={data}
       animate={{
         duration: 2000,
         onLoad: { duration: 1000 }

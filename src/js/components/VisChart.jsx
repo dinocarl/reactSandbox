@@ -1,5 +1,4 @@
 import React from 'react';
-import { prop } from 'ramda';
 import {
   makeWidthFlexible,
   XYPlot,
@@ -11,13 +10,13 @@ import {
 
 const FlexibleXYPlot = makeWidthFlexible(XYPlot);
 
-const VisChart = props => (
+const VisChart = ({ data }) => (
   <FlexibleXYPlot
     height={300}
   >
     <HorizontalGridLines />
     <LineSeries
-      data={prop(`data`, props)}
+      data={data}
     />
     <XAxis />
     <YAxis />

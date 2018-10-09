@@ -1,10 +1,9 @@
 import React from 'react';
-import { prop } from 'ramda';
 import { Typography } from '@material-ui/core';
 
-const Caption = props => (
+const Caption = ({ text }) => (
   <Typography variant="caption" gutterBottom align="center">
-    {prop(`text`, props)}
+    {text}
   </Typography>
 );
 

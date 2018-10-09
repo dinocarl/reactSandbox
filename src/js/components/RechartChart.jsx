@@ -1,5 +1,4 @@
 import React from 'react';
-import { prop } from 'ramda';
 import {
   ResponsiveContainer,
   LineChart,
@@ -11,10 +10,10 @@ import {
   Legend
 } from 'recharts';
 
-const RechartChart = props => (
+const RechartChart = ({ data }) => (
   <ResponsiveContainer aspect={4 / 3}>
     <LineChart
-      data={prop(`data`, props)}
+      data={data}
       margin={{
         top: 5,
         right: 30,

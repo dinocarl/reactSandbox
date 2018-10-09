@@ -5,8 +5,6 @@ import {
   Typography
 } from '@material-ui/core';
 import AllCharts from './AllCharts';
-import Forecast from './Forecast';
-import UnitToggle from './UnitToggle';
 import allData from '../data';
 
 const App = () => (
