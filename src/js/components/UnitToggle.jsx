@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { path } from 'ramda';
 import PropTypes from 'prop-types';
 import { Button } from '@material-ui/core';
 import { connect } from 'react-redux';
@@ -18,11 +19,13 @@ class UnitToggle extends Component {
   }
 
   render() {
-    const { currentUnit } = this.props;
     return (
       <Button color="inherit" onClick={this.toggleAction}>
         °
-        {currentUnit}
+        {path(
+          [`props`, `currentUnit`],
+          this
+        )}
       </Button>
     );
   }
