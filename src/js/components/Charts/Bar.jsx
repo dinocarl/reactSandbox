@@ -1,18 +1,19 @@
 import React from 'react';
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
+  Brush,
   Legend
 } from 'recharts';
 
 const RechartChart = ({ data }) => (
   <ResponsiveContainer aspect={4 / 3}>
-    <LineChart
+    <BarChart
       data={data}
       margin={{
         top: 5,
@@ -26,9 +27,17 @@ const RechartChart = ({ data }) => (
       <CartesianGrid strokeDasharray="3 3" />
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="pv" stroke="#8884d8" isAnimationActive={false} activeDot={{ r: 8 }} />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" isAnimationActive={false} />
-    </LineChart>
+      <Brush
+        dataKey="name"
+        startIndex={6}
+        height={30}
+        stroke="#666"
+      />
+      <Bar
+        dataKey="pv"
+        fill="#dd6666"
+      />
+    </BarChart>
   </ResponsiveContainer>
 );
 

@@ -12,7 +12,7 @@ const App = () => (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="title" color="inherit">
-           Chart Comparisons
+           Chart Options
         </Typography>
       </Toolbar>
     </AppBar>

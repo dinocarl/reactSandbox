@@ -1,36 +1,30 @@
 import React from 'react';
 import { Grid, Paper } from '@material-ui/core';
 import { path } from 'ramda';
-import VicChart from './VicChart';
-import RechartChart from './RechartChart';
-import ChartKickChart from './ChartKickChart';
-import VisChart from './VisChart';
-import Caption from './Caption';
+import LineChart from './Charts/Line';
+import BarChart from './Charts/Bar';
+import PieChart from './Charts/Pie';
 
 const AllCharts = props => (
   <Grid container spacing={24}>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <Paper>
-        <VicChart data={path([`data`, `vicChartData`], props)} />
-        <Caption text="Victory" />
+        <LineChart data={path([`data`, `rechartData`], props)} />
       </Paper>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <Paper>
-        <RechartChart data={path([`data`, `rechartData`], props)} />
-        <Caption text="ReCharts" />
+        <BarChart data={path([`data`, `rechartData`], props)} />
       </Paper>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <Paper>
-        <ChartKickChart data={path([`data`, `chartKickData`], props)} />
-        <Caption text="Chartkick" />
+        <PieChart data={path([`data`, `rechartData`], props)} />
       </Paper>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={12} md={6}>
       <Paper>
-        <VisChart data={path([`data`, `reactVisData`], props)} />
-        <Caption text="ReactVis" />
+        <PieChart type="Donut" data={path([`data`, `rechartData`], props)} />
       </Paper>
     </Grid>
   </Grid>
