@@ -1,0 +1,27 @@
+@import "./config";
+
+.rating-unit-display {
+  position: relative;
+  display: inline-block;
+  color: #9a9a9a;
+  line-height: 1.2;
+  vertical-align: top;
+  margin: 0 1rem 1rem;
+  width: (5 * $star-width) + (4 * $star-spacing);
+}
+
+.rating-fg-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #009d4e;
+}
+
+.rating-bg-stars::before, .rating-fg-stars::before {
+  content: "#{$star}#{$star}#{$star}#{$star}#{$star}";
+  font-size: $star-width;
+  letter-spacing: $star-spacing;
+}
